@@ -2,6 +2,7 @@
 // import { useTable } from 'react-table'
 import {COLUMNS} from './columns'
 import './table.css'
+import './button.css'
 // import useFetch from '../APICall/useFetch'
 
 // export const BasicTables = () =>  
