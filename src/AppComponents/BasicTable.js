@@ -1,7 +1,7 @@
 // import React, {useMemo} from 'react'
 // import { useTable } from 'react-table'
 import {COLUMNS} from './columns'
-// import './table.css'
+import './table.css'
 // import useFetch from '../APICall/useFetch'
 
 // export const BasicTables = () =>  
