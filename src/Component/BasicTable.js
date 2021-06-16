@@ -152,21 +152,6 @@ function Table({
   // Render the UI for your table
   return (
     <>
-      <pre>
-        <code>
-          {JSON.stringify(
-            {
-              pageIndex,
-              pageSize,
-              pageCount,
-              canNextPage,
-              canPreviousPage,
-            },
-            null,
-            2
-          )}
-        </code>
-      </pre>
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map(headerGroup => (
@@ -285,7 +270,6 @@ function BasicTable() {
     if (fetchId === fetchIdRef.current) {
         const limit = pageSize
         const offset = (pageIndex)*pageSize
-		console.log(limit,offset)
 		
 		fetch('https://chemdbsurp.herokuapp.com/'+`?limit=${limit}&offset=${offset}`)
 			.then(res => {
@@ -295,7 +279,6 @@ function BasicTable() {
 				return res.json();
 			})
 			.then(data => {
-				console.log(data)
 				setData(data.data);
 				setError(null);
 				setPageCount(Math.ceil(data.count/ pageSize))
