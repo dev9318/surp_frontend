@@ -24,5 +24,6 @@ export const COLUMNS = [{
        },
        {  
        Header: 'Source',  
-       accessor: 'Source'  
+       accessor: 'Source',
+       disableSortBy: true
        }]     
