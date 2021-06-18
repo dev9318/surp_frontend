@@ -1,7 +1,7 @@
 button {
   display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
+  padding: 8px 12px;
+  font-size: 16px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -9,8 +9,8 @@ button {
   color: #fff;
   background-color: #4CAF50;
   border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
+  border-radius: 5px;
+  box-shadow: 0 1px #999;
 }
 
 button:hover {background-color: #3e8e41}
