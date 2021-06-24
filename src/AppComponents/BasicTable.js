@@ -62,8 +62,8 @@ function Table({
                   <span>
                     {column.isSorted
                       ? column.isSortedDesc
-                        ? " 🔽"
-                        : " 🔼"
+                        ? <i class="fas fa-sort-down"></i>
+                        : <i class=" fas fa-sort-up"></i>
                       : ""}
                   </span>
                 </th>

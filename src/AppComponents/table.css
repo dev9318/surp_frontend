@@ -5,18 +5,27 @@ table {
 }
 
 table td, table th {
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   padding: 8px;
+  font-size: 13px;
+ width: 500px;
+ font-family: 'Roboto', sans-serif;
+ font-weight: 600;
 }
 
-table tr:nth-child(even){background-color: #f2f2f2;}
+
+/*table tr:nth-child(even){background-color: #f2f2f2;}*/
 
 table tr:hover {background-color: #ddd;}
 
 table th {
+
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: center;
-  background-color: #04AA6D;
-  color: white;
+  text-align: left;
+  background-color: #f7f5f5;
+  color: black;
+  font-size: 1em;
+  font-weight: 900;
+
 }

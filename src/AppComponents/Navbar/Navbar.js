@@ -15,7 +15,7 @@ class Navbar extends Component {
 
 				<nav className = "Navbaritems">
 					<h1 
-					className = "navbar-logo">Accidents{/*<i className="fab fa-react"></i>*/}
+					className = "navbar-logo">Accidents-DB{/*<i className="fab fa-react"></i>*/}
 					</h1>
 					<div className = "menu-icon" onClick = {this.handleClick}>
 					<i className = {this.state.clicked ? 'fas fa-times': "fas fa-bars"}></i>
