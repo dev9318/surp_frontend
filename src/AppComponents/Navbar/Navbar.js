@@ -37,7 +37,7 @@ class Navbar extends Component {
 						
 						}
 					</ul>
-					<Button> Sign Up </Button>
+					<Button onClick= "parent.location = '/signup"> Sign Up </Button>
 				</nav>
 
 
