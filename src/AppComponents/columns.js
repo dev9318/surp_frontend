@@ -1,6 +1,12 @@
+import moment from 'moment';
+
 export const COLUMNS = [{  
        Header: 'Date',  
-       accessor: 'Date'  
+       accessor: d => {
+              return moment(d.updated_at)
+                .local()
+                .format("DD-MM-YYYY")
+            } 
        },
        {  
        Header: 'Type',  
