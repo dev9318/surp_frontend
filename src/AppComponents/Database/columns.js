@@ -16,6 +16,15 @@ export const COLUMNS = [{
        Header: 'Location',  
        accessor: 'Location'  
        },
+       {
+       Header: 'Latitude',
+       accessor: 'Latitude'
+       },
+       {
+              Header:'Longitude',
+              accessor:'Longitude'
+       },
+
        {  
        Header: 'Company',  
        accessor: 'Company'  
