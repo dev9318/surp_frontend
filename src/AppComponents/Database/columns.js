@@ -21,10 +21,23 @@ export const COLUMNS = [
        accessor: 'Location',
        Filter: ColumnFilter
        },
+       {
+       Header: 'Latitude',
+       accessor: 'Latitude',
+       Filter: ColumnFilter,
+       disableFilters:true 
+       },
+       {
+              Header:'Longitude',
+              accessor:'Longitude',
+              Filter: ColumnFilter,
+              disableFilters:true 
+       },
+
        {  
        Header: 'Company',  
        accessor: 'Company',
-       Filter: ColumnFilter  
+       Filter: ColumnFilter, 
        },
        {  
        Header: 'Deaths',  
