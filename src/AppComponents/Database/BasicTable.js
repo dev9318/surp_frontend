@@ -2,7 +2,8 @@ import {COLUMNS} from './columns'
 import './table.css'
 import './button.css'
 import React, { useState, useEffect, useCallback } from "react";
-import { useTable, useSortBy, usePagination } from "react-table";
+import { useTable,useGlobalFilter, useSortBy, usePagination, useFilters} from "react-table";
+import { GlobalFilter } from './GlobalFilter'
 
 
 
@@ -27,7 +28,8 @@ function Table({
     nextPage,
     previousPage,
     setPageSize,
-    state: { pageIndex, pageSize, sortBy }
+    setGlobalFilter,
+    state: { pageIndex, pageSize, sortBy, globalFilter }
   } = useTable(
     {
       columns,
@@ -38,9 +40,12 @@ function Table({
       autoResetSortBy: false,
       pageCount: controlledPageCount
     },
+    useFilters,
+    useGlobalFilter,
     useSortBy,
     usePagination
   );
+
 
   useEffect(() => {
     // onSort({ sortBy, pageIndex, pageSize });
@@ -49,6 +54,7 @@ function Table({
 
   return (
     <>
+    <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -58,14 +64,16 @@ function Table({
                 // we can add them into the header props
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
+
                   {/* Add a sort direction indicator */}
                   <span>
                     {column.isSorted
                       ? column.isSortedDesc
-                        ? <i class="fas fa-sort-down"></i>
-                        : <i class=" fas fa-sort-up"></i>
+                      ? <i class="fas fa-sort-down"></i>
+                      : <i class=" fas fa-sort-up"></i>
                       : ""}
                   </span>
+                      <div> {column.canFilter ? column.render('Filter') : null} </div>
                 </th>
               ))}
             </tr>
