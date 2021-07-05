@@ -40,11 +40,17 @@ function Piechart(){
 
     return (
         <div>
-          <button onClick={()=> setOpen(open=>!open)}> {col} </button>
-          {open && <div className="shadow h-auto w-56">
+          <button onClick={()=> setOpen(open=>!open)}style={{
+              position: "relative",
+              margin: "16px",
+              width: "auto"
+            }}> {col} </button>
+          {open && <div className="shadow h-auto w-56" style={{
+              position: "relative"
+            }}>
           <ul className="text-left">
             {columns.map((item, i) => (
-                <li key={i} style={{"background":"#ff9999","margin": "1px", "padding": "5px","position": "flex"}} onClick={() => {
+                <li key={i} style={{"background":"#eeeeee","margin": "1px", "padding": "5px","width":"100px"}} onClick={() => {
                   setOpen(false);
                   setCol(item);
                 }}>
