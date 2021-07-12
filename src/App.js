@@ -9,6 +9,7 @@ import { Route, Link } from "react-router-dom";
 import Piechart from "./AppComponents/Charts/PieChart";
 import AddInfo from "./AppComponents/InfoByUser/AddInfo";
 import Lists from "./AppComponents/InfoByUser/Lists";
+import {MapChart} from './Map/MapChar';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/pie" component={Piechart} />
       <Route path="/addInfo" component={AddInfo} />
       <Route path="/list" component={Lists} />
+      <Route path = "/map" component={MapChart} />
 
       {/* <Route exact path = "/map" component {Map} /> */}
 
