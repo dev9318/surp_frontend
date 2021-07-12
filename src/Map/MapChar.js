@@ -37,7 +37,7 @@ const PROJECTION_CONFIG = {
   };
   
 export const MapChart = () => {
-  const url = "https://chemdbsurp.herokuapp.com/";
+  const url = "https://chemdbsurp.herokuapp.com/?limit=50";
    
   const [map_dataa, setData] = React.useState([]);
 
@@ -50,6 +50,7 @@ export const MapChart = () => {
         return res.json();
       })
       .then(data => {
+        console.log(data)
         var map_data = [];
         for(var row in data.data){
           console.log(row);
