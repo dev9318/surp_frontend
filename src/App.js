@@ -7,6 +7,7 @@ import Form from './AppComponents/SignUp/Form.js'
 import './App.css';
 import {Route,Link } from "react-router-dom";
 import Piechart from './AppComponents/Charts/PieChart';
+import {MapChart} from './Map/MapChar';
 
 function App(){
 	return (  
@@ -17,7 +18,7 @@ function App(){
             <Route exact path = "/contact" component ={Contact} />
             <Route exact path = "/signup" component ={Form} />
             <Route path = "/pie" component ={Piechart} />
-            
+            <Route path = "/map" component={MapChart} />
             {/* <Route exact path = "/map" component {Map} /> */}
 
             {/* <Contact/> */}
