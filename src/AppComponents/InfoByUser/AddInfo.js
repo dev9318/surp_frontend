@@ -1,4 +1,3 @@
-// eslint-disable prettier/prettier
 import React, { useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/core";
 import {
@@ -26,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
   btn: { display: "block", marginTop: 20 },
   dt: {
     width: "80%",
+  },
+  select:{
+    width: "80%"
   },
   fc: {
     marginTop: 20,
@@ -97,6 +99,11 @@ export default function AddInfo() {
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
+  const [type, setType] = React.useState('');
+
+  const handleTypeChange = (event) => {
+    setType(event.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -128,6 +135,7 @@ export default function AddInfo() {
           details,
           selectedDate,
           keyword,
+          type,
         }),
       }).then(() => console.log("submmitted"));
     }
@@ -179,6 +187,25 @@ export default function AddInfo() {
                 required
                 error={industryError}
               />
+              <FormControl variant="outlined" className={classes.select}>
+                <InputLabel id="Type">Type of Accident</InputLabel>
+                <Select
+                  labelId="Type-label"
+                  id="TypeSelect"
+                  value={type}
+                  onChange={handleTypeChange}
+                  label="Type"
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={"Explosion"}>Explosion</MenuItem>
+                  <MenuItem value={"Fire"}>Fire</MenuItem>
+                  <MenuItem value={"Gas Leakage"}>Gas Leakage</MenuItem>
+                  <MenuItem value={"Crane Collapse"}>Crane Collapse</MenuItem>
+                  <MenuItem value={"Chemical Leakage"}>Chemical Leakage</MenuItem>
+                </Select>
+              </FormControl>
             </Grid>
             <Grid item md={6} xs={12}>
               <TextField
