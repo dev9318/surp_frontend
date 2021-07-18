@@ -3,6 +3,7 @@ import { PieChart, Pie, ResponsiveContainer, Sector } from 'recharts';
 import { useState, useEffect } from 'react';
 
 
+
 const renderActiveShape = (props) => {
   const RADIAN = Math.PI / 180;
   const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent, value } = props;
@@ -15,7 +16,6 @@ const renderActiveShape = (props) => {
   const ex = mx + (cos >= 0 ? 1 : -1) * 22;
   const ey = my;
   const textAnchor = cos >= 0 ? 'start' : 'end';
-  console.log(payload);
 
   return (
     <g>
@@ -57,13 +57,23 @@ export default function Piechart() {
     const [error, setError] = useState(null);
     const [open, setOpen] = useState(false);
     const [col, setCol] = useState('Type');
-    const columns = ['Type', 'Date', 'Company']
+    const columns = ['Type', 'Date', 'Company'];
+    const [date1, setDate1] = useState(null);
+    const [date2, setDate2] = useState(null);
 
     const onPieEnter = (_, index)=> {
         setActiveIndex(index);
     }
     useEffect(() => {
-        const url = `https://chemdbsurp.herokuapp.com/group?group=${col}`;
+        let opts=`?group=${col}`;
+        if(date1){
+          opts = opts + '&startDate=' + date1;
+        }
+        if(date2){
+          opts = opts + '&endDate=' + date2;
+        }
+        console.log(opts);
+        const url = `https://chemdbsurp.herokuapp.com/group`+opts;
         const abortCont = new AbortController();
         fetch(url, {signal: abortCont.signal})
         .then(res => {
@@ -87,12 +97,26 @@ export default function Piechart() {
             setError(err.message);
         }
         })
-      }, [col]);
-
+      }, [col, date1, date2]);
 
     return (
         <div>
-          <center><button onClick={()=> setOpen(open=>!open)}style={{
+          <div>
+          <label for="start">Start date:</label>
+
+          <input type="date" id="start"
+                value={date1} onChange={date=>{
+                  setDate1(date.target.value)
+                }}></input>
+          </div>
+          <div>
+          <label for="end">End date:</label>
+
+          <input type="date" id="end"
+                value={date2} onChange={date=>setDate2(date.target.value)}></input>
+          </div>
+          <center>
+            <button onClick={()=> setOpen(open=>!open)}style={{
               position: "relative",
               margin: "16px",
               width: "auto"
