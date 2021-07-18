@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { PieChart, Pie, ResponsiveContainer, Sector } from 'recharts';
 import { useState, useEffect } from 'react';
-
+import './PieChart.css';
 
 
 const renderActiveShape = (props) => {
@@ -101,21 +101,24 @@ export default function Piechart() {
 
     return (
         <div>
-          <div>
-          <label for="start">Start date:</label>
+          
+          <div className="row">
+            <div className="column">
+            
+              <label for="start">Start date:</label>
 
-          <input type="date" id="start"
-                value={date1} onChange={date=>{
-                  setDate1(date.target.value)
-                }}></input>
-          </div>
-          <div>
-          <label for="end">End date:</label>
+              <input type="date" id="start"
+                    value={date1} onChange={date=>{
+                      setDate1(date.target.value)
+                    }}></input>
+            </div>
+            <div className="column">
+            <label for="end">End date:</label>
 
-          <input type="date" id="end"
-                value={date2} onChange={date=>setDate2(date.target.value)}></input>
-          </div>
-          <center>
+            <input type="date" id="end"
+                  value={date2} onChange={date=>setDate2(date.target.value)}></input>
+            </div>
+            {/* <div className="column">
             <button onClick={()=> setOpen(open=>!open)}style={{
               position: "relative",
               margin: "16px",
@@ -134,26 +137,42 @@ export default function Piechart() {
                 </li>
               ))}
           </ul>
-        </div>}</center>
-         <center> 
-          <PieChart width={1000} height={700}>
 
-            <Pie
-             data={data} 
-             dataKey="count" 
-             nameKey="_id" 
-             label
-             activeIndex={activeIndex}
-             activeShape={renderActiveShape}
-             cx="50%"
-             cy="50%"
-             innerRadius={210}
-             outerRadius={300}
-             fill="#8884d8"
-             onMouseEnter={onPieEnter}
-             />
-          </PieChart>
-        </center>
+        </div>}</div> */}
+        <div className="column">
+        <div class="dropdown">
+            <button class="dropbtn">{col}</button>
+            <div class="dropdown-content">
+              <a onClick={()=>{setCol("Type");}}>Type</a>
+              <a onClick={()=>{setCol("Date");}}>Date</a>
+              <a onClick={()=>{setCol("Company");}}>Company</a>
+            </div>
+          </div>
+        </div>
+        </div>
+         <div className="row">
+           <ResponsiveContainer width={1200} height={900}>
+           <PieChart width={1000} height={700}>
+
+              <Pie
+              data={data} 
+              dataKey="count" 
+              nameKey="_id" 
+              label
+              activeIndex={activeIndex}
+              activeShape={renderActiveShape}
+              cx="50%"
+              cy="50%"
+              innerRadius={210}
+              outerRadius={300}
+              fill="#8884d8"
+              onMouseEnter={onPieEnter}
+              />
+              </PieChart>
+           </ResponsiveContainer>
+         
+         </div>   
+       
       </div>  
        
             
