@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { LineChart, Line, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip,  } from 'recharts';
+import { LineChart, Line, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip, Brush, Area, AreaChart } from 'recharts';
 import { useState, useEffect } from 'react';
 import moment from 'moment';
 
@@ -82,12 +82,19 @@ export const Linechart = () =>{
         </div>
          <div className="row">
            <ResponsiveContainer width={1200} height={900}>
-           <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+           <LineChart width={600} height={300} data={data} margin={{ top: 40, right: 40, bottom: 20, left: 20 }}>
             <Line type="monotone" dataKey="count" stroke="#8884d8" />
             <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-            <XAxis dataKey="_id" />
-            <YAxis />
+            <XAxis dataKey="_id"/>
+            <YAxis domain={['auto', 'auto']} />
             <Tooltip />
+            <Brush dataKey="date" startIndex={0}>
+              <AreaChart>
+                <CartesianGrid />
+                <YAxis hide domain={['auto', 'auto']} />
+                <Area dataKey="price" stroke="#8884d8" fill="#7084d8" dot={true} />
+              </AreaChart>
+            </Brush>
           </LineChart>
            </ResponsiveContainer>
          
