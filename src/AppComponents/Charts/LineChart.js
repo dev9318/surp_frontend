@@ -9,7 +9,7 @@ export const Linechart = () =>{
     var [pending, setIsPending] = useState(false);
     const [error, setError] = useState(null);
     const [open, setOpen] = useState(false);
-    // const [col, setCol] = useState('Type');
+    const [col, setCol] = useState('Date');
     const columns = ['Type', 'Date', 'Company'];
     const [date1, setDate1] = useState(null);
     const [date2, setDate2] = useState(null);
@@ -71,20 +71,16 @@ export const Linechart = () =>{
             <input type="date" id="end"
                   value={date2} onChange={date=>setDate2(date.target.value)}></input>
             </div>
-        <div className="column">
-        <div class="dropdown">
-            <button class="dropbtn">{col}</button>
-            <div class="dropdown-content">
-              <a onClick={()=>{setCol("Type");}}>Type</a>
-              <a onClick={()=>{setCol("Date");}}>Date</a>
-              <a onClick={()=>{setCol("Company");}}>Company</a>
-            </div>
-          </div>
-        </div>
         </div>
          <div className="row">
            <ResponsiveContainer width={1200} height={900}>
-           
+           <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+            <Line type="monotone" dataKey="count" stroke="#8884d8" />
+            <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+            <XAxis dataKey="_id" />
+            <YAxis />
+            <Tooltip />
+          </LineChart>
            </ResponsiveContainer>
          
          </div>   
