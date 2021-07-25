@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { LineChart, Line, ResponsiveContainer, Sector } from 'recharts';
+import { LineChart, Line, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip,  } from 'recharts';
 import { useState, useEffect } from 'react';
 
 
@@ -37,7 +37,14 @@ export const Linechart = () =>{
         })
         .then(res => {
             setIsPending(false);
-            setData(res.data);
+            res.data.sort((a,b)=>{
+              return new Date(a._id) - new Date(b._id);
+            })
+            var d = [];
+            for(var r in res.data){
+              d[r] = {'_id':new Date(res.data[r]._id), 'count':res.data[r].count}
+            }
+            setData(d);
             setError('error');
         })
         .catch(err => {
