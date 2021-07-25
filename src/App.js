@@ -10,6 +10,7 @@ import Piechart from './AppComponents/Charts/PieChart';
 import AddInfo from "./AppComponents/InfoByUser/AddInfo";
 import Lists from "./AppComponents/InfoByUser/Lists";
 import { MapChart } from './AppComponents/Map/MapChar';
+import { Linechart } from './AppComponents/Charts/LineChart';
 
 function App() {
     return (
@@ -22,7 +23,7 @@ function App() {
             <Route path="/pie" component={Piechart} />
             <Route path="/addInfo" component={AddInfo} />
             <Route path="/list" component={Lists} />
-
+            <Route path="/line" component={Linechart} />
             <Route path = "/map" component={MapChart} />
 
             {/* <Contact/> */}
