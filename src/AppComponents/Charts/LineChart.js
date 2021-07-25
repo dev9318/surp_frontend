@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { LineChart, Line, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip,  } from 'recharts';
 import { useState, useEffect } from 'react';
+import moment from 'moment';
 
 
 export const Linechart = () =>{
@@ -42,7 +43,7 @@ export const Linechart = () =>{
             })
             var d = [];
             for(var r in res.data){
-              d[r] = {'_id':new Date(res.data[r]._id), 'count':res.data[r].count}
+              d[r] = {'_id': moment(res.data[r]._id).local().format("DD-MM-YYYY"), 'count':res.data[r].count}
             }
             setData(d);
             setError('error');
