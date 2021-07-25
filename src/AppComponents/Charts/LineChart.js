@@ -92,7 +92,7 @@ export const Linechart = () =>{
               <AreaChart>
                 <CartesianGrid />
                 <YAxis hide domain={['auto', 'auto']} />
-                <Area dataKey="price" stroke="#8884d8" fill="#7084d8" dot={true} />
+                <Area dataKey="count" stroke="#8884d8" fill="#8884d8" dot={false} />
               </AreaChart>
             </Brush>
           </LineChart>
