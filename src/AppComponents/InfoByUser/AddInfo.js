@@ -125,7 +125,7 @@ export default function AddInfo() {
       setDetailsError(true);
     }
     if (author && location && industry && details) {
-      fetch("http://localhost:8000/list", {
+      fetch("https://chemdbsurp.herokuapp.com/form", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({
