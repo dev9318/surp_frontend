@@ -23,6 +23,17 @@ class Navbar extends Component {
 
 					<ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
 						{MenuItems.map((item,index)=> {
+							if(item.dropdown){
+								return (
+									<div className="dropdown">
+										<a className={item.cName}>Analytics</a>
+										<div className="dropdown-content">
+											<a href="/pie">Pie</a>
+											<a href="/line">Line</a>
+										</div>
+									</div>
+								);
+							}
 							return(
 								<li key ={index}>
 									<a className = {item.cName} href={item.url} >

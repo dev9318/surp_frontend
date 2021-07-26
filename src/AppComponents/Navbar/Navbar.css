@@ -95,7 +95,8 @@ margin-right: 2rem;
 	.nav-links {
 
 		text-align: center;
-		padding: 2rem;
+		padding-top: 5rem;
+		/* padding: 2rem; */
 		width: 100%;
 		display: table;
 }
