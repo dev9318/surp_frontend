@@ -53,7 +53,9 @@ function Table({
   }, [sortBy, fetchData, pageIndex, pageSize]);
 
   return (
-    <>
+    <div className="table-struct" style={{
+      padding:"auto"
+    }}>
     <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <table {...getTableProps()}>
         <thead>
@@ -149,7 +151,7 @@ function Table({
           ))}
         </select>
       </div>
-    </>
+    </div>
   );
 }
 

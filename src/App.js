@@ -18,6 +18,7 @@ function App() {
             <Navbar />
             <Route exact path="/home" component={Home} />
             <Route exact path="/database" component={BasicTable} />
+            <Route exact path="/" component={BasicTable} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/signup" component={Form} />
             <Route path="/pie" component={Piechart} />
