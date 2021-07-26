@@ -29,6 +29,15 @@ cName :'nav-links'
 
 
 },
+
+{ 
+    title : "Analysis",
+    url : "analysis",
+    cName :'nav-links'
+    
+    
+    },
+
 { 
 title : "Sign up",
 url : "signup",
