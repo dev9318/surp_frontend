@@ -11,7 +11,6 @@ import AddInfo from "./AppComponents/InfoByUser/AddInfo";
 import Lists from "./AppComponents/InfoByUser/Lists";
 import { MapChart } from './AppComponents/Map/MapChar';
 import { Linechart } from './AppComponents/Charts/LineChart';
-import { Analysis } from './AppComponents/Analytics/Analytics';
 
 function App() {
     return (
@@ -26,7 +25,6 @@ function App() {
             <Route path="/list" component={Lists} />
             <Route path="/line" component={Linechart} />
             <Route path = "/map" component={MapChart} />
-            <Route path = "/analytics" component={Analysis} />
 
             {/* <Contact/> */}
 
