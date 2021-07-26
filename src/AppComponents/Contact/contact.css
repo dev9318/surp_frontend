@@ -25,6 +25,10 @@ button {
 
 /* Contact.js */
 .form {
+  position: absolute;
+  top: 50%;
+  left: 50%;  
+  transform: translate(-50%, -40%);
   height: 100vh;
   display: flex;
   flex-direction: column;
