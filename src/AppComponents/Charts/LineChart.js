@@ -62,11 +62,13 @@ export const Linechart = () =>{
 
     return (
         <div>
-          
+          <center>
           <div className="row">
+          <div className="column"></div>
+          <div className="column"></div>
             <div className="column">
             
-              <label for="start">Start date:</label>
+              <label for="start">Start date: </label>
 
               <input type="date" id="start"
                     value={date1} onChange={date=>{
@@ -74,7 +76,7 @@ export const Linechart = () =>{
                     }}></input>
             </div>
             <div className="column">
-            <label for="end">End date:</label>
+            <label for="end">End date: </label>
 
             <input type="date" id="end"
                   value={date2} onChange={date=>setDate2(date.target.value)}></input>
@@ -99,7 +101,7 @@ export const Linechart = () =>{
            </ResponsiveContainer>
          
          </div>   
-       
+         </center>
       </div>  
        
             
