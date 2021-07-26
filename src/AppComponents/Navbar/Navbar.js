@@ -26,7 +26,7 @@ class Navbar extends Component {
 							if(item.dropdown){
 								return (
 									<div className="dropdown">
-										<button className="dropbtn">Analytics</button>
+										<a className={item.cName}>Analytics</a>
 										<div className="dropdown-content">
 											<a href="/pie">Pie</a>
 											<a href="/line">Line</a>

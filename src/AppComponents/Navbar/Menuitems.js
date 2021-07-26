@@ -36,7 +36,7 @@ cName :'nav-links'
     cName :'nav-links',
     dropdown:true
     
-    },
+},
 
 { 
 title : "Sign up",
