@@ -56,6 +56,7 @@
   
   .form-content-right {
     border-radius: 0 10px 10px 0;
+    padding: 0rem;
     position: relative;
     background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
   }

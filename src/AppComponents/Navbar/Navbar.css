@@ -43,7 +43,7 @@ margin-right: 2rem;
 .nav-links {
 	color: white;
 	text-decoration: none;
-	padding : 0.5rem 1rem;
+	padding : 0.1rem 1rem;
 }
 
 .nav-links:hover {
@@ -95,8 +95,11 @@ margin-right: 2rem;
 	.nav-links {
 
 		text-align: center;
-		padding-top: 5rem;
-		/* padding: 2rem; */
+		padding: 0.1rem 1rem;
+		padding-top: 0.1rem;
+		padding-right: 1rem;
+		padding-bottom: 0.5rem;
+		padding-left: 1rem;
 		width: 100%;
 		display: table;
 }

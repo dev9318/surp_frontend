@@ -6,7 +6,10 @@ export const ColumnFilter = ({ column }) => {
         <span>
             
             {' '}
-            <input value= {filterValue || ''} onChange = {(e) => setFilter(e.target.value)}/>
+            <input style= {{
+                width: "100%"
+                }} 
+                value= {filterValue || ''} onChange = {(e) => setFilter(e.target.value)}/>
         </span>
     )
 }
