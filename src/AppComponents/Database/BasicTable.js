@@ -53,8 +53,8 @@ function Table({
   }, [sortBy, fetchData, pageIndex, pageSize]);
 
   return (
-    <div className="table-struct" style={{
-      padding:"auto"
+    <div class="table-struct" style={{
+      padding: "1rem"
     }}>
     <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <table {...getTableProps()}>
@@ -64,7 +64,8 @@ function Table({
               {headerGroup.headers.map((column) => (
                 // Add the sorting props to control sorting. For this example
                 // we can add them into the header props
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                <th>
+                  <th{...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
 
                   {/* Add a sort direction indicator */}
@@ -75,7 +76,8 @@ function Table({
                       : <i class=" fas fa-sort-up"></i>
                       : ""}
                   </span>
-                      <div> {column.canFilter ? column.render('Filter') : null} </div>
+                  </th>
+                  <div onClick={()=>{}}> {column.canFilter ? column.render('Filter') : null} </div>
                 </th>
               ))}
             </tr>
