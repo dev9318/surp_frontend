@@ -1,6 +1,7 @@
 import { green, lightGreen, red } from "@material-ui/core/colors";
 import { render } from "@testing-library/react";
 import React, { useEffect, useState } from "react";
+import ReactTooltip from "react-tooltip";
 
 import './Map.css';
 
@@ -25,6 +26,8 @@ export const MapChart = () => {
   const [isPending, setIsPending] = React.useState(true);
 
   const [menu, setOver] = React.useState('All');
+
+  const [content, setContent] = React.useState('');
 
 
   useEffect(() => {
@@ -87,14 +90,13 @@ export const MapChart = () => {
   console.log(count);
 
     return (
-      <div class="container">
+      <>
         {!isPending &&<div class="cont" style={{
-           position: 'absolute',
-           top: 70, left: 200,
-           right: 0, bottom: 0,
-           justifyContent: 'center',
-           alignItems: 'center'
-        }}> <div class="dropdown">
+           marginTop:"100px",
+           marginRight:"45%",
+           margin:"7% 45% 2%"
+        }}> <div class="dropdown" style={{
+        }}>
           <center><button class="dropbtn">Type of Accident</button>
           <div class="dropdown-content">
             <a onClick={() => setOver('All')}>All</a>
@@ -142,7 +144,10 @@ export const MapChart = () => {
             
               {map_d.map(({ID, name, coordinates, show }) => (
                
-                <Marker key={ID} coordinates={coordinates}  onMouseEnter={() => show=true} >
+                <Marker key={ID} coordinates={coordinates}  
+                // onMouseOver ={()=>{show=true}}
+                onMouseLeave={()=>{setContent(null)}}
+                onMouseEnter={() => {setContent(name + " - "+ String(count[coordinates]))}} >
                  
                  {console.log(show)}
                   {count[coordinates] === 1 && < circle r={3} fill="green" stroke="#fff" strokeWidth={2} />}
@@ -152,14 +157,14 @@ export const MapChart = () => {
   
   
   
-                  {<text
+                  {/* { <text
                     textAnchor="middle"
                     y={15}
                     style={{ fontFamily: "system-ui", fill: "#5D5A6D", fontSize: 0.2 + "em" }}
                   >
                     {name}
                   </text>
-                  }
+                  } */}
                 </Marker>
               )
               )
@@ -169,9 +174,9 @@ export const MapChart = () => {
   
         </ComposableMap>
         }
+        <ReactTooltip>{content}</ReactTooltip>
   
-  
-      </div>
+      </>
   
     );
 
