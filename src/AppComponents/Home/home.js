@@ -6,7 +6,7 @@ function Home()
 {
     return (
         <div>
-            <h1>Welcome to Accident Database</h1>
+            <h1 >Welcome to Accident Database</h1>
         </div>
     )
 } 
