@@ -147,7 +147,7 @@ export const MapChart = () => {
                 <Marker key={ID} coordinates={coordinates}  
                 // onMouseOver ={()=>{show=true}}
                 onMouseLeave={()=>{setContent(null)}}
-                onMouseEnter={() => {setContent(name)}} >
+                onMouseEnter={() => {setContent(name + " - "+ String(count[coordinates]))}} >
                  
                  {console.log(show)}
                   {count[coordinates] === 1 && < circle r={3} fill="green" stroke="#fff" strokeWidth={2} />}
