@@ -89,7 +89,7 @@ export const MapChart = () => {
     return (
       <div class="container">
         {!isPending && <div class="dropdown">
-          <button class="dropbtn">Type of Accident</button>
+          <center><button class="dropbtn">Type of Accident</button>
           <div class="dropdown-content">
             <a onClick={() => setOver('All')}>All</a>
             <a onClick={() => setOver('Explosion')}>Explosion</a>
@@ -98,6 +98,7 @@ export const MapChart = () => {
             <a onClick={() => setOver('Crane collapse')}> Crane collapse </a>
             <a onClick={() => setOver('Benzimidazole gas leakage')}> Benzimidazole gas leakage</a>
           </div>
+          </center>
         </div>}
         {isPending && <h2 style={{
   
