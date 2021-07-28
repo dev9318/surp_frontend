@@ -92,9 +92,10 @@ export const MapChart = () => {
     return (
       <>
         {!isPending &&<div class="cont" style={{
-           
+           marginTop:"100px",
+           marginRight:"45%",
+           margin:"7% 45% 2%"
         }}> <div class="dropdown" style={{
-          
         }}>
           <center><button class="dropbtn">Type of Accident</button>
           <div class="dropdown-content">
@@ -145,7 +146,7 @@ export const MapChart = () => {
                
                 <Marker key={ID} coordinates={coordinates}  
                 // onMouseOver ={()=>{show=true}}
-                onMouseLeave={()=>{setContent('')}}
+                onMouseLeave={()=>{setContent(null)}}
                 onMouseEnter={() => {setContent(name)}} >
                  
                  {console.log(show)}
