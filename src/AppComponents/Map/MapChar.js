@@ -1,7 +1,7 @@
 import { green, lightGreen, red } from "@material-ui/core/colors";
 import { render } from "@testing-library/react";
 import React, { useEffect, useState } from "react";
-
+import ReactTooltip from "react-tooltip";
 
 import './Map.css';
 
@@ -91,7 +91,7 @@ export const MapChart = () => {
 
     return (
       <>
-        {/* {!isPending &&<div class="cont" style={{
+        {!isPending &&<div class="cont" style={{
            
         }}> <div class="dropdown" style={{
           
@@ -106,7 +106,7 @@ export const MapChart = () => {
             <a onClick={() => setOver('Benzimidazole gas leakage')}> Benzimidazole gas leakage</a>
           </div>
           </center>
-        </div></div>} */}
+        </div></div>}
         {isPending && <h2 style={{
   
           position: 'absolute',
@@ -145,6 +145,7 @@ export const MapChart = () => {
                
                 <Marker key={ID} coordinates={coordinates}  
                 // onMouseOver ={()=>{show=true}}
+                onMouseLeave={()=>{setContent('')}}
                 onMouseEnter={() => {setContent(name)}} >
                  
                  {console.log(show)}
@@ -155,14 +156,14 @@ export const MapChart = () => {
   
   
   
-                  { <text
+                  {/* { <text
                     textAnchor="middle"
                     y={15}
                     style={{ fontFamily: "system-ui", fill: "#5D5A6D", fontSize: 0.2 + "em" }}
                   >
                     {name}
                   </text>
-                  }
+                  } */}
                 </Marker>
               )
               )
